@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class ReservationResponse {
     private Long id;
+    private Long bookId;
     private String bookTitle;
     private String bookAuthor;
     private LocalDateTime reservedAt;
@@ -19,6 +20,7 @@ public class ReservationResponse {
     public static ReservationResponse from(Reservation reservation) {
         return new ReservationResponse(
                 reservation.getId(),
+                reservation.getBook().getId(),
                 reservation.getBook().getTitle(),
                 reservation.getBook().getAuthor(),
                 reservation.getReservedAt(),

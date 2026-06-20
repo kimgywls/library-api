@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class LoanResponse {
     private Long id;
+    private Long bookId;
     private String bookTitle;
     private String bookAuthor;
     private LocalDateTime loanDate;
@@ -24,6 +25,7 @@ public class LoanResponse {
                 && LocalDateTime.now().isAfter(loan.getDueDate());
         return new LoanResponse(
                 loan.getId(),
+                loan.getBook().getId(),
                 loan.getBook().getTitle(),
                 loan.getBook().getAuthor(),
                 loan.getLoanDate(),

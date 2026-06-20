@@ -31,7 +31,7 @@ public class BookController {
     public ResponseEntity<Page<BookResponse>> getBooks(
             @Parameter(description = "검색어") @RequestParam(required = false) String keyword,
             @Parameter(description = "검색 유형: title, author, all(기본값)") @RequestParam(required = false, defaultValue = "all") String searchType,
-            @ParameterObject @PageableDefault(size = 10, sort = "createdAt", direction = Sort.Direction.DESC) Pageable pageable
+            @ParameterObject @PageableDefault(size = 9, sort = "createdAt", direction = Sort.Direction.DESC) Pageable pageable
     ) {
         return ResponseEntity.ok(bookService.getBooks(keyword, searchType, pageable));
     }
