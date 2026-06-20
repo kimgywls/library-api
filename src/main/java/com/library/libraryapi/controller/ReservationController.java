@@ -55,10 +55,4 @@ public class ReservationController {
         return ResponseEntity.noContent().build();
     }
 
-    @Operation(summary = "전체 예약 현황 조회 (ADMIN)")
-    @GetMapping("/admin/reservations")
-    @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<List<ReservationResponse>> getAllReservations() {
-        return ResponseEntity.ok(reservationService.getAllReservations());
-    }
 }

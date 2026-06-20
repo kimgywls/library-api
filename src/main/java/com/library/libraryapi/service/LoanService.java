@@ -94,12 +94,6 @@ public class LoanService {
         return LoanResponse.from(loanRepository.save(loan));
     }
 
-    public List<LoanResponse> getAllLoans() {
-        return loanRepository.findAll().stream()
-                .map(LoanResponse::from)
-                .toList();
-    }
-
     @Scheduled(cron = "0 0 0 * * *")
     @Transactional
     public void updateOverdueLoans() {

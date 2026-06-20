@@ -77,12 +77,6 @@ public class ReservationService {
         reservation.cancel();
     }
 
-    public List<ReservationResponse> getAllReservations() {
-        return reservationRepository.findAll().stream()
-                .map(ReservationResponse::from)
-                .toList();
-    }
-
     private Member getMember(String username) {
         return memberRepository.findByUsername(username)
                 .orElseThrow(() -> new CustomException("사용자를 찾을 수 없습니다.", HttpStatus.NOT_FOUND));
