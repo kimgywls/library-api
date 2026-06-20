@@ -49,4 +49,8 @@ public class Book {
         this.publisher = publisher;
         this.isbn = isbn;
     }
+
+    public void changeStatus(BookStatus status) {
+        this.status = status;
+    }
 }
