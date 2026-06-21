@@ -172,7 +172,7 @@ http://localhost:8080/swagger-ui/index.html
 
 ## ERD
 
-> 이미지 추가 예정
+<img width="3222" height="2320" alt="library_api_erd (1)" src="https://github.com/user-attachments/assets/67a4188c-90b8-427e-bdd3-6867937fd8c4" />
 
 ---
 
